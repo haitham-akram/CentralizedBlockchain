@@ -17,12 +17,6 @@ class MerkleTree {
     this.root = [];
   }
 
-  hash(data) {
-    return data != null
-      ? crypto.createHash("sha256").update(data.toString()).digest("hex")
-      : "";
-  }
-
   createTree(transactions) {
     this.root.unshift(transactions);
     this.root.unshift(
@@ -121,7 +115,6 @@ class Blockchain {
   }
   copy(clone) {
     this.chain = clone.map((x) => x);
-    
   }
 }
 
